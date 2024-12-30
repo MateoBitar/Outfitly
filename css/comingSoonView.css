@@ -1,0 +1,31 @@
+/* General Styles */
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('SignIn & Home Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+main h1 {
+    color: #4b0082;
+    margin-top: 70px; /* Adds spacing to lower the headings */
+    margin-left: 0; /* Removes the negative left margin if present */
+    text-align: center; /* Ensures the text stays centered */
+}
+
+main h2 {
+    color: #9248ab;
+    margin-top: 10px; /* Adds spacing to lower the headings */
+    margin-left: 0; /* Removes the negative left margin if present */
+    text-align: center; /* Ensures the text stays centered */
+}

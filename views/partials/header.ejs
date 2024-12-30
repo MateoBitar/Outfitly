@@ -1,0 +1,49 @@
+<!-- Header Partial -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/header.css">
+  <link href="https://fonts.cdnfonts.com/css/outfit" rel="stylesheet">
+  <title>OutFitly</title>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1 class="logo">OutFitly</h1>
+      <a href="#user-popup" class="account-icon">
+        <img src="/css/profile_icon.png" alt="Account">
+      </a>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/outfitly/attends/user_id/<%= user ? user.id : '' %>">Events</a></li>
+        <li><a href="/outfitly/outfits/user_id/<%= user ? user.id : '' %>">Outfits</a></li>
+        <li><a href="/outfitly/items/user_id/<%= user ? user.id : '' %>">Garments</a></li>
+        <li><a href="/outfitly/coming-soon">Schedule</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Popup for User Info -->
+  <div id="user-popup" class="popup hidden">
+    <div class="popup-content">
+      <a href="#" class="close-popup">&times;</a>
+      <h5>User Info</h5>
+      <% if (user) { %>
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <p><strong>Gender:</strong> <%= user.gender %></p>
+        <p><strong>Style:</strong> <%= user.style %></p>
+        <p><strong>Favorite Color:</strong> <%= user.fav_color %></p>
+        <a href="/outfitly/users/updateUser" class="edit">Edit Info</a> 
+        <a href="/outfitly" class="log-out">Log Out</a>
+
+      <% } else { %>
+        <p>User not logged in.</p>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

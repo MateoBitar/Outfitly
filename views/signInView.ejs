@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutFitly Sign Up</title>
+    <link rel="stylesheet" href="/css/signInView.css">
+    <link href="https://fonts.cdnfonts.com/css/outfit" rel="stylesheet">
+</head>
+<body>
+    <div class="logo">OutFitly</div>
+    <div class="container">
+        <div class="signup-form">
+            <h2>Sign up</h2>
+            <form id="signupForm" method="POST" action="/outfitly/users/signIn">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="name" placeholder="Username" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="user@company.com" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="pass" placeholder="Password" required>
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <button type="submit">Continue</button>
+            </form>
+            <% if (typeof error !== 'undefined') { %> <div style="color: red; margin-top: 10px; margin-left: 10px;"><%= error %></div> <% } %>
+            <div class="or">Or</div>
+            <div class="login-link">
+                <a href="/outfitly/login">Already have an account? Log in</a>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="/outfitly/privacy">Privacy</a>
+            <a href="/outfitly/terms">Terms</a>
+        </div>
+    </div>
+<script src="signIn.js"></script>
+</body>
+</html>

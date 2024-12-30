@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('SignIn & Home Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #4b0082;
+    margin-left: -15px;
+    font-size: 2.2rem;
+}
+
+h2 {
+    color: #4b0082;
+    margin-left: -15px;
+    font-size: 2rem;
+}
+/* Flashcards Container */
+.flashcards-container {
+    margin-top: 15px;
+}
+
+/* Button Above Flashcards (if condition) */
+.button-container-if {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Flashcards Section */
+.flashcards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px; /* Adds space between flashcards */
+}
+
+.flashcard {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent */
+    border: 1px solid #4b0082;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px 18px 18px 18px;
+    width: calc(33% - 30px); /* Adjust width for three cards per row */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+}
+
+.flashcard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.flashcard h3 {
+    margin-bottom: 10px;
+    color: #4b0082;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+/* Delete Button Inside Flashcard */
+.delete-form {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.delete-button {
+    background-color: #f44336; /* Red background for delete button */
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* No Events Section (else condition) */
+.no-events-container {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border: 1px solid #4b0082;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-events-container p {
+    margin: 0 auto;
+    font-size: 18px;
+    color: #4b0082;
+}
+
+/* Button Below No Events (else condition) */
+.button-container-else {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* General Button Styling */
+button {
+    padding: 0.5rem 1rem;
+    background-color: #4b0082;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #9248ab;
+    transform: scale(1.05);
+}
+

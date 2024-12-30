@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-image: url('SignIn & Home Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Back Arrow Styling */
+.back-arrow {
+    position: absolute;
+    top: 12%;
+    left: 35%;
+    width: 70px; /* Set fixed dimensions for a perfect circle */
+    height: 70px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-decoration: none;
+    font-size: 2.5rem; /* Adjust font size */
+    font-weight: bolder;
+    color: #4b0082;
+    border-radius: 50%; /* Make it a circle */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Fix centering of the arrow */
+.back-arrow span {
+    display: inline-block; /* Ensure the span is aligned properly */
+    line-height: 1; /* Prevent any extra spacing */
+    text-align: center; /* Center text within the span */
+}
+
+/* Hover effect for the arrow */
+.back-arrow:hover {
+    color: #9248ab;
+    transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+}
+
+/* Container Styling */
+.update-user-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    margin-left: 3%;
+}
+
+.update-user-container h1 {
+    color:#4b0082;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.update-user-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    font-size: 1.2rem;
+    color: #4b0082;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #4b0082;
+    border-radius: 5px;
+}
+
+input:focus, select:focus {
+    border-color: #9248ab;
+    outline: none;
+    box-shadow: 0 0 5px rgba(146, 72, 171, 0.5);
+}
+
+/* Button Styling */
+.save-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #4b0082;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.save-button:hover {
+    background-color: #9248ab;
+    transform: scale(1.05);
+}

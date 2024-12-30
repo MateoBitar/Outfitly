@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutFitly Login</title>
+    <link rel="stylesheet" href="/css/loginView.css">
+    <link href="https://fonts.cdnfonts.com/css/outfit" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo">OutFitly</div>
+    <div class="container">
+        <div class="login-form">
+            <h2>Log In</h2>
+            <form id="loginForm" method="POST" action="/outfitly/users/login">
+                <label for="username">Username</label> 
+                <input type="text" id="username" name="name" placeholder="Username">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="pass" placeholder="Password">
+                <button type="submit">Continue</button>
+            </form>
+            <% if (typeof error !== 'undefined') { %> <div style="color: red; margin-top: 10px; margin-left: 10px;"><%= error %></div> <% } %>
+            <div class="or">Or</div>
+            <div class="sign-in">
+                <a href="/outfitly/signIn">Don't have an account? Sign Up</a>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="/outfitly/privacy">Privacy</a>
+            <a href="/outfitly/terms">Terms</a>
+        </div>
+    </div>
+<script src="login.js"></script>
+</body>
+</html>

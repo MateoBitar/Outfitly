@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Garments</title>
+    <link rel="stylesheet" href="/css/garmentsView.css">
+    <link href="https://fonts.cdnfonts.com/css/outfit" rel="stylesheet">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h1>Your Garments</h1>
+        <div class="flashcards-container">
+            <% if (garments && garments.length > 0) { %>
+                <div class="button-container-if">
+                    <button onclick="location.href='/outfitly/items/create'">+ Create Garment</button>
+                </div>
+                <div class="flashcards">
+                    <% for (let i = 0; i < garments.length; i++) { %>
+                        <a class="flashcard">
+                            <img 
+                                src="data:image/png;base64,<%= garments[i].item_image.toString('base64') %>" 
+                                alt="Item Image" 
+                                class="item-image">
+                            <h3><%= garments[i].item_name %></h3>
+                            <p><strong>Category:</strong> <%= garments[i].category %></p>
+                            <p><strong>Style:</strong> <%= garments[i].item_style %></p>
+                            <p><strong>Brand:</strong> <%= garments[i].brand %></p>
+                            <p><strong>Color:</strong> <%= garments[i].color %></p>
+                            <form method="POST" action="/outfitly/items/delete/<%= garments[i].item_id %>" class="delete-form">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        </a>
+                    <% } %>
+                </div>
+            <% } else { %>
+                <div class="no-items-container">
+                    <p>No Garments Found In Your Wardrobe. Why not create one?</p>
+                </div>
+                <div class="button-container-else">
+                    <button onclick="location.href='/outfitly/items/create'">+ Create Garment</button>
+                </div>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>

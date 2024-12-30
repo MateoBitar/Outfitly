@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.7); /* Slightly transparent */
+  backdrop-filter: blur(10px); /* Glass effect */
+  padding: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+  background: rgba(255, 255, 255, 0); /* Transparent white */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #4b0082; /* Dark font color for contrast */
+  margin-left: 45.2%;
+}
+
+.account-icon img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 40px;
+  margin-top: 20px;
+}
+
+.navbar {
+  margin-top: -20px;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  background: rgba(255, 255, 255, 0);
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar ul li {
+  margin: 0
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #9248ab; /* Contrast with background */
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 2px 5px; /* Adjust padding to control spacing */
+  display: inline-block; /* Ensure proper clickable area */
+}
+
+.navbar ul li a:hover {
+  color: #4b0082;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Show the popup when the user clicks the account icon */
+.popup:target {
+  display: block;
+}
+
+/* General Popup Styling */
+.popup {
+  position: fixed;
+  top: 35%; /* Adjusted to make the popup higher on the page */
+  left: 50%;
+  transform: translate(-50%, -10%);
+  background-color: rgb(255, 255, 255); /* Semi-transparent background */
+  border: 2px solid #4b0082; /* Matches theme */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 400px;
+  height: auto;
+  max-width: 90%;
+}
+
+.popup-content h5 {
+  color: #4b0082;
+  font-size: 2.5rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+
+/* Popup Content Label Styling */
+.popup-content p strong {
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-left: 5px;
+  width: 200px; /* Adds space between the label and the content */
+  text-align: left; /* Aligns labels */
+  color: #4b0082; /* Matches theme color */
+}
+
+/* Close Button */
+.close-popup {
+  position: absolute;
+  top: 3px;
+  right: 20px;
+  text-decoration: none;
+  color: #4b0082;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* Buttons in Popup */
+.popup-content .log-out,
+.popup-content .edit {
+  display: inline-flex;
+  margin: 20px 0 0 0; /* Adds spacing between buttons */
+  padding: 10px 20px;
+  color: white;
+  background-color: #4b0082; /* Matches theme */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.popup-content .log-out:hover,
+.popup-content .edit:hover {
+  background-color: #9248ab; /* Slightly lighter shade for hover effect */
+  transform: scale(1.05); /* Adds hover animation */
+}

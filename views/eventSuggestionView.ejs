@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Suggestions</title>
+    <link rel="stylesheet" href="/css/eventSuggestionView.css">
+    <link href="https://fonts.cdnfonts.com/css/outfit" rel="stylesheet">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h1>Outfit for Event: </h1>
+        <h2><%= event.name %></h2>
+        <div class="suggestion-list">
+            <% suggestions.forEach(suggestion => { %>
+                <div class="suggestion-card">
+                    <img 
+                        src="data:image/png;base64,<%= suggestion.outfit_image.toString('base64') %>" 
+                        alt="Outfit Image" 
+                        class="outfit-image">
+                    <h3><%= suggestion.outfit_name %></h3>
+                </div>
+            <% }); %>
+        </div>
+        <button onclick="location.href='/outfitly/attends/user_id/<%= user.id %>'">Back to Events</button>
+    </main>
+</body>
+</html>

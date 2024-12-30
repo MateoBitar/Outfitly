@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Events</title>
+    <link rel="stylesheet" href="/css/eventsView.css">
+    <link href="https://fonts.cdnfonts.com/css/outfit" rel="stylesheet">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h1>Welcome, <%= user.name %>!</h1>
+        <h2>Your Events</h2>
+        <div class="flashcards-container">
+            <% if (events && events.length > 0) { %>
+                <div class="button-container-if">
+                    <button onclick="location.href='/outfitly/outfitsuggestions/suggest-outfit'">+ Create Event</button>
+                </div>
+                <div class="flashcards"><% for (let i = 0 ; i < events.length ; i++) { %>
+                    <a href="/outfitly/relations/event_id/<%= events[i] ? events[i].event_id : '' %>" class="flashcard">
+                        <h3><%= events[i].event_name %> - <%= events[i].description %></h3>
+                        <form method="POST" action="/outfitly/events/delete/<%= events[i].event_id %>" class="delete-form">
+                        <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                    </a>
+                    
+                <% }; %>
+                </div>
+            <% } else { %>
+                <div class="no-events-container"> 
+                    <p>No Events Created. You have no events. Why not host one?</p> 
+                </div>
+                <div class="button-container-else">
+                    <button onclick="location.href='/outfitly/outfitsuggestions/suggest-outfit'">+ Create Event</button>
+                </div>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>

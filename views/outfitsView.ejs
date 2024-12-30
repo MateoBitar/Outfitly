@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Outfits</title>
+    <link rel="stylesheet" href="/css/outfitsView.css">
+    <link href="https://fonts.cdnfonts.com/css/outfit" rel="stylesheet">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h1>Your Outfits</h1>
+        <div class="flashcards-container">
+            <% if (outfits && outfits.length > 0) { %>
+                <div class="button-container-if">
+                    <button onclick="location.href='/outfitly/outfits/create'">+ Create Outfit</button>
+                </div>
+                <div class="flashcards">
+                    <% for (let i = 0; i < outfits.length; i++) { %>
+                        <a class="flashcard">
+                            <img 
+                                src="data:image/png;base64,<%= outfits[i].outfit_image.toString('base64') %>" 
+                                alt="Outfit Image" 
+                                class="outfit-image">
+                            <h3><%= outfits[i].outfit_name %></h3>
+                            <p><strong>Details:</strong> <%= outfits[i].details %></p>
+                            <p><strong>Weather:</strong> <%= outfits[i].weather %></p>
+                            <form method="POST" action="/outfitly/outfits/delete/<%= outfits[i].outfit_id %>" class="delete-form">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        </a>
+                    <% } %>
+                </div>
+            <% } else { %>
+                <div class="no-outfits-container">
+                    <p>No Outfits Found. Why not create one?</p>
+                </div>
+                <div class="button-container-else">
+                    <button onclick="location.href='/outfitly/outfits/create'">+ Create Outfit</button>
+                </div>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>

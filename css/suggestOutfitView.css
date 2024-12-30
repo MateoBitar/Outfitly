@@ -1,0 +1,99 @@
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('SignIn & Home Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    width: fit-content; /* Makes the main container adjust its width based on content */
+    margin: 50px auto; /* Centers the container horizontally */
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+    text-align: center;
+    color: #4b0082;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.suggestion-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    max-width: 1200px; /* Prevent the grid from being too wide */
+    margin: 0 auto;
+}
+
+.suggestion-card {
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: fit-content; /* Automatically adjusts the width based on content */
+    height: fit-content; /* Automatically adjusts the height based on content */
+    display: flex; /* Ensures the card behaves like a flex container */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: center; /* Centers the content inside the card */
+    align-items: center; /* Centers the content horizontally inside the card */
+}
+
+
+
+.suggestion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.suggestion-card img {
+    width: 200px; /* Set the maximum width to 200px */
+    height: 267px; /* Maintain the 3:4 aspect ratio (200px * 4 / 3) */
+    object-fit: cover; /* Ensures the image fills the dimensions without distortion */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block; /* Ensures proper alignment within the parent container */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto;
+}
+
+
+.suggestion-card h3 {
+    font-size: 1.2em;
+    color: #4b0082;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4b0082;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9248ab;
+}
+
+h4 {
+    margin-left: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #9248ab;
+}

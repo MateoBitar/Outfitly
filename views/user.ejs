@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+    <link rel="stylesheet" href="/css/user.css">
+    <link href="https://fonts.cdnfonts.com/css/outfit" rel="stylesheet">
+    <title>OutFitly - Update Info</title>
+</head>
+<body>
+    <main>
+        <!-- Back Arrow -->
+        <a href="/outfitly/attends/user_id/<%= user.id %>#user-popup" class="back-arrow" title="Go back">
+            <span>&larr;</span>
+        </a>
+
+        <!-- Update User Container -->
+        <div class="update-user-container">
+            <h1>Update Your Info</h1>
+            <% if (user) { %>
+                <form action="/outfitly/users/saveUser/<%= user.id %>" method="POST" class="update-user-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" value="<%= user.name %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="<%= user.email %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Password:</label>
+                        <input type="password" id="pass" name="pass" placeholder="Enter new password (Optional)" value="<%= user.pass %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender">
+                            <option value="Male" <%= user.gender === 'Male' ? 'selected' : '' %>>Male</option>
+                            <option value="Female" <%= user.gender === 'Female' ? 'selected' : '' %>>Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="style">Style:</label>
+                        <input type="text" id="style" name="style" value="<%= user.style %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fav_color">Favorite Color:</label>
+                        <input type="text" id="fav_color" name="fav_color" value="<%= user.fav_color %>" required>
+                    </div>
+                    <button type="submit" class="save-button">Save User</button>
+                </form>
+            <% } else { %>
+                <p>No user data available. Please log in.</p>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>
